@@ -1,0 +1,85 @@
+h1 {
+	color:lightgrey;
+	letter-spacing:8px;
+	font-family: onyx regular;
+	padding-bottom: -5px;
+}
+p {
+	color: lightgrey;
+	letter-spacing:6px;
+	font-family: onyx regular;
+	font-size: 24px;
+	padding-bottom: 5px;
+}
+body {
+	background-image: url("finalbossback.jpg");
+	font-family: arial;
+	color: white;
+}
+.container-fluid {
+	background: lightgrey; 
+  	background: -webkit-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.5),rgba(0,200,200,1)); 
+  	background: -o-linear-gradient(right,rgba(0,0,0,0),rgba(0,0,0,0.5),rgba(0,200,200,1)); 
+  	background: -moz-linear-gradient(right,rgba(0,0,0,0),rgba(0,0,0,0.5),rgba(0,200,200,1));
+  	background: linear-gradient(to right, rgba(0,0,0,0),rgba(0,0,0,0.5),rgba(0,200,200,1));
+}
+.btn-lg {
+	font-family: onyx regular;
+	background-color: darkgrey;
+	color:white;
+	letter-spacing:6px;
+	font-weight: bold;
+	font-size: 16px;
+	border: 0 none;
+	border-radius: 0;
+}
+.navbar-header {
+	position: center;
+}
+.selector {
+	text-align: center;
+	color:black;
+	font-size: 36px;
+}
+#greeting {
+display: none;
+}
+#music {
+	display: none;
+}
+#name1 {
+	color:black;
+}
+#form2 {
+	display: none;
+}
+#image {
+	display: none;
+}
+.col-md-6 {
+
+}
+.bars {
+background-color: green;
+height: 25px;
+margin: 10px 0 0 0;
+transition:width 1s ease-in;
+border-radius: 5px;
+}
+#bar0 {
+	display:none;
+	width:100%;
+#hp {
+	display:none;
+}	
+
+}	
+.number {
+color: white;
+text-align: right;
+padding: 3px;
+font-size: 16px; 
+}
+#name0 {
+display: none;
+}

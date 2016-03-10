@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    	<title>Final Boss Simulator</title>
+    	 <script src="http://code.jquery.com/jquery.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+	<link href="custom.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+	<body>
+	<div class="container-fluid">
+  		<h1>FINAL BOSS SIMULATOR</h1>
+  			<p>It's the end.</p> 
+	</div>
+	<div class="navbar-header">
+		<a href="http://www.connorelkins.com/finalboss/"><button type="button" class="btn-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>NEW GAME</button></a>
+		<button type="button" class="btn-lg" onclick="enableMute()"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>OFF</button>
+		<button type="button" class="btn-lg" onclick="disableMute()"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>ON</button>
+	</div>
+	<div class="selector">
+	<audio id="music" controls>
+  <source src="bossbattle.m4a" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<script>
+var vid = document.getElementById("music");
+function enableMute() { 
+    vid.muted = true;
+} 
+
+function disableMute() { 
+    vid.muted = false;
+} 
+  
+</script>
+		<br>
+		<form  id="form1" action=" "/><p>What is your name?</p>
+<p><input type="text" id="name1" /></p>
+<input type="submit" value="Fight!">
+</form>
+<p id="names"></p>
+	</div>
+	<br>
+	<div class="col-md-6">
+	 <p id="greeting">Your challenge awaits... </p>
+	 <img id="image" src="Comp 132.gif" style="max-width:100%;max-height:100%;">
+	 <div id="bar0" class="bars"><p class="number"><span id="grade">100</span></p><p>HP</p></div>
+	 <br>
+	 <br>
+	 <p id="grade2"></p></p></div>
+	 </div>
+
+
+ <script>
+ 
+ $(document).ready(function(){
+ 
+ $('#form1').submit(function() {
+ name1 = $("#name1").val(); 
+ $("#greeting").show();
+ $("#greeting").append(name1);
+ $("#form2").show();
+ $("#image").show();
+ $("#bar0").show();
+ $("#name0").show();
+ $("#form1").hide();
+ $("#hp").show();
+ var vid = document.getElementById("music");
+vid.loop = true;
+vid.autoplay = true;
+vid.load();
+function enableMute() { 
+    vid.muted = true;
+} 
+
+function disableMute() { 
+    vid.muted = false;
+} 
+  
+ return false;
+});
+});
+</script>
+<p><span id="grade"></span></p>
+<p id="grade2"></p>
+	</div>
+	<div class="col-md-6">
+	<form  id="form2" action=" ">
+<p>Your enemy charges at you...</p>
+<input type="radio" name="variable" value="33" />Block with your shield<br />
+<input type="radio" name="variable" value="33" />Charge back at them<br />
+<input type="radio" name="variable" value="0" />Dive out of the way<br />
+
+<p>They start to swing their cleaver at you...</p>
+<input type="radio" name="sub" value="0" />Parry around them with your sword<br />
+<input type="radio" name="sub" value="33" />Take cover under your shield<br />
+<input type="radio" name="sub" value="33" />Blind him with a flash spell<br />
+
+<p>They're caught off gaurd! Time to end this...</p>
+<input type="radio" name="con" value="33" />Ram them with your blade<br />
+<input type="radio" name="con" value="0" />Blast them with the ultimate magic<br />
+<input type="radio" name="con" value="33" />Tackle him off the edge<br />
+
+<p><input style="color:black; font-family: arial;" type="submit" value="Submit"></p>
+</form>
+<script>
+document.getElementById("form2").onsubmit=function() {
+    variablevar = document.getElementsByName("variable");
+    for(i=0; i<variablevar.length; i++) {
+       if (variablevar[i].checked) {
+       vscore = parseInt(variablevar[i].value);
+       }
+       }//end for
+       
+    subvar = document.getElementsByName("sub");
+       for(i=0; i<subvar.length; i++) {
+       if (subvar[i].checked) {
+       sscore = parseInt(subvar[i].value);
+       }
+       }//end for
+       
+    convar = document.getElementsByName("con");
+       for(i=0; i<convar.length; i++) {
+       if (convar[i].checked) {
+       cscore = parseInt(convar[i].value);
+       }
+       }//end for
+       
+    
+   
+       
+    result = vscore + sscore + cscore;
+    document.getElementById("grade").innerHTML = result;
+    if (result == 0) {result2 = "YOU ARE VICTORIOUS!<br />";
+    bar0.style.width = "5%";}
+    if (result == 33) {result2 = "GAME OVER Stay strong!<br />";
+   bar0.style.width ="33%";}
+    if (result == 66) {result2 = "GAME OVER Don't give up!<br />";
+    bar0.style.width = "66%";}
+    if (result == 99) {result2 = "GAME OVER Stay determined!<br />";
+    bar0.style.width = "100%";}
+    document.getElementById("grade2").innerHTML = result2; 
+       return false; // required to not refresh the page; just leave this here
+} //this ends the submit function
+
+</script>
+<script>
+
+</script>
+
+
+<p><span id="grade"></span></p>
+<p id="grade2"></p>
+</div><!-- close main div -->
+
+
+	</body>
+</html>
